@@ -34,7 +34,8 @@ gulp.task('css', function() {
 		autoprefixer('last 2 versions', '> 1%')
 	]))
 	.pipe(sourcemaps.write(scss + 'maps'))
-	.pipe(gulp.dest(root));
+	.pipe(gulp.dest(root))
+	.pipe( browserSync.stream( { match: '**/*.css' } ));
 });
 
 // Optimize images through gulp-image

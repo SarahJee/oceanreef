@@ -50,7 +50,8 @@
 		width: 100%;
 		padding: .5em 1em .5em 0;
 		text-decoration: none;
-		color: #fff;
+		color: $color__body;
+		text-transform: uppercase;
 	}
 	
 	a:hover,
@@ -62,7 +63,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-		background-color: $color__skin;
+		color: $color__interactive;
 	}
 	
 	.menu-item-has-children,
@@ -151,7 +152,7 @@ button.dropdown-toggle {
 @media screen and (min-width: $query__medium) {
 	.main-navigation {
 		position: absolute;
-		width: 55%;
+		width: 90%;
 		right: 0;
 		
 		

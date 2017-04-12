@@ -26,11 +26,11 @@
 				}
 			}
 			
-		}
+		} 
 	}
 	
 	a {
-		font-weight: 600;
+		font-weight: 300;
 		text-decoration: none;
 		
 		&:hover,
@@ -211,7 +211,13 @@ h2.widget-title {
 /* Footer widget stylings */ 
 
 #footer-widget-area {
-	background-color: #d9ecf3;
+	background-color: $color__skin;
+
+
+@media screen and (min-width: $query__medium) {
+	margin-top: -5em;
+	padding-top: 5em;
+	}
 }
 
 .footer-wrap {
