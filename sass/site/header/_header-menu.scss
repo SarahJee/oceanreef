@@ -11,6 +11,7 @@
 		margin: 0;
 		padding-top: 1em;
 		padding-left: 0;
+		font-size: .65em;
 
 		ul {
 			display: none;
@@ -52,6 +53,7 @@
 		text-decoration: none;
 		color: $color__body;
 		text-transform: uppercase;
+		font-weight: 700;
 	}
 	
 	a:hover,
@@ -95,7 +97,7 @@ button.dropdown-toggle {
 	padding: .6em .8em;
 	font-size: 80%;
 	text-transform: uppercase;
-	color: white;
+	color: red;
 	border: 1px solid hsla(0, 0%, 100%, .3);
 }
 

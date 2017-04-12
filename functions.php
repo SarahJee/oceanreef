@@ -41,7 +41,7 @@ function oceanreef_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'oceanreef-full-bleed', 2000, 1200, true);
+	add_image_size( 'oceanreef-full-bleed', 1080, 800, true);
 	add_image_size( 'oceanreef-index-img', 800, 400, true);
 
 	// This theme uses wp_nav_menu() in one location.

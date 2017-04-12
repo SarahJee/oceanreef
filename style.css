@@ -287,30 +287,32 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Arial, sans-serif;
+	color: #002c3d;
+	letter-spacing: 1.5px;
 }
 
 h1 {
-	font-size: 2.6em;
-}
-
-h2 {
 	font-size: 2.2em;
 }
 
-h3 {
+h2 {
 	font-size: 2em;
 }
 
-h4 {
+h3 {
 	font-size: 1.8em;
 }
 
-h5 {
+h4 {
 	font-size: 1.6em;
 }
 
-h6 {
+h5 {
 	font-size: 1.4em;
+}
+
+h6 {
+	font-size: 1.2em;
 }
 
 p {
@@ -571,15 +573,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #404040;
+	color: #ff3e48;
 }
 
 a:visited {
-	color: #808284;
+	color: #ff3e48;
 }
 
 a:hover, a:focus, a:active {
-	color: #ff3e48;
+	color: #ee2d37;
 }
 
 a:focus {
@@ -942,11 +944,13 @@ a:hover, a:active {
 	font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Arial, sans-serif;
 	color: #fff;
 	background-color: #fff;
+	max-width: 1080px;
+	margin: 0 auto;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
 	.site-header {
-		padding: 1em 2em;
+		padding: 1em 0;
 	}
 }
 
@@ -1016,13 +1020,13 @@ a:hover, a:active {
 		        justify-content: space-between;
 	}
 	.site-branding {
-		width: 35%;
+		width: 15%;
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 0 auto;
 		        flex: 1 0 auto;
 	}
 	.site-navigation {
-		width: 55%;
+		width: 85%;
 	}
 }
 
@@ -1042,6 +1046,7 @@ Header Menu
 	margin: 0;
 	padding-top: 1em;
 	padding-left: 0;
+	font-size: .65em;
 }
 
 .main-navigation ul ul {
@@ -1081,8 +1086,9 @@ Header Menu
 	width: 100%;
 	padding: .5em 1em .5em 0;
 	text-decoration: none;
-	color: #002d41;
+	color: #002c3d;
 	text-transform: uppercase;
+	font-weight: 700;
 }
 
 .main-navigation a:hover,
@@ -1126,7 +1132,7 @@ button.dropdown-toggle {
 	padding: .6em .8em;
 	font-size: 80%;
 	text-transform: uppercase;
-	color: white;
+	color: red;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -1221,23 +1227,26 @@ button.dropdown-toggle {
 	color: white;
 }
 
-.entry-title {
-	margin: .125em 0 .25em;
-	font-size: 2.5em;
+h1.entry-title {
+	font-size: 1em;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 0;
+	padding: 1.4em;
 }
 
 @media screen and (min-width: 900px) {
-	.entry-title {
-		font-size: 3em;
+	h1.entry-title {
+		font-size: 1.2em;
 	}
 }
 
-.entry-title a {
+h1.entry-title a {
 	text-decoration: none;
 	color: #444444;
 }
 
-.entry-title a:focus, .entry-title a:hover {
+h1.entry-title a:focus, h1.entry-title a:hover {
 	border-bottom: 5px solid #ff3e48;
 }
 
@@ -1321,14 +1330,12 @@ button.dropdown-toggle {
 	}
 }
 
-/* Single Post Featured Images */
+/* Page Header Featured Images */
 .full-bleed {
 	width: 100vw;
-	max-height: 1200px;
+	max-height: 800px;
 	margin-left: -1em;
 	margin-top: -1.5em;
-	border-top: 1px solid #e6e6e6;
-	border-bottom: 1px solid #e6e6e6;
 	overflow: hidden;
 }
 
@@ -1374,6 +1381,42 @@ button.dropdown-toggle {
 
 .site-content {
 	padding-top: 1.5em;
+}
+
+.bg {
+	background: url(http://www.oceanreef.dev/wp-content/uploads/2017/04/white-bg.jpg) no-repeat;
+	height: 370px;
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+#intro-section {
+	position: relative;
+}
+
+.intro-text {
+	position: absolute;
+	height: 280px;
+	background-color: rgba(0, 44, 62, 0.88);
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 90px;
+}
+
+.intro-text p {
+	color: #fff;
+	text-align: center;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+@media screen and (min-width: 900px) {
+	.intro-text {
+		padding: 3em 6em;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1544,6 +1587,8 @@ a.sub-foot-link {
 
 .site-info {
 	margin: 0 auto;
+	font-size: .7em;
+	color: #002c3d;
 }
 
 /*--------------------------------------------------------------
@@ -1769,6 +1814,10 @@ h2.widget-title {
 .footer-wrap .widget {
 	padding: 2em;
 	text-align: center;
+}
+
+.footer-wrap .widget a {
+	color: #002c3d;
 }
 
 @media screen and (min-width: 900px) {

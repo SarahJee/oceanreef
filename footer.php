@@ -18,8 +18,8 @@
 				
 				<a href="#" class="sub-foot-link">
 					<picture>
-						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-large.jpg">
-						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-small.jpg" alt="alttest">
+						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/enrol-lge.jpg">
+						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/enrol-sml.jpg" alt="Enrolment">
 					</picture>
 					
 					<div class="link-text">enrolments</div>
@@ -31,7 +31,7 @@
 				<a href="#" class="sub-foot-link">
 					<picture>
 						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-large.jpg">
-						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-small.jpg" alt="alttest">
+						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-sml.jpg" alt="Term Calendar">
 					</picture>
 					
 					<div class="link-text">term calendar</div>
@@ -42,8 +42,8 @@
 				
 				<a href="#" class="sub-foot-link">
 					<picture>
-						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-large.jpg">
-						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-small.jpg" alt="alttest">
+						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/news-lge.jpg">
+						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/news-sml.jpg" alt="Tannoy Newsletter">
 					</picture>
 					
 					<div class="link-text">tannoy newsletter</div>
@@ -54,8 +54,8 @@
 
 				<a href="#" class="sub-foot-link">
 					<picture>
-						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-large.jpg">
-						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/calendar-small.jpg" alt="alttest">
+						<source media="(min-width: 600px)" srcset="http://www.oceanreef.dev/wp-content/uploads/2017/04/pc-lge.jpg">
+						<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/pc-sml.jpg" alt="P&C">
 					</picture>
 					
 					<div class="link-text">P&C</div>

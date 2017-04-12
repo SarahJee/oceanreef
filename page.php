@@ -13,6 +13,29 @@
  */
 
 get_header(); ?>
+<?php // Use featured image for hero banner
+	if ( has_post_thumbnail() ) { ?>
+	<figure class="featured-image full-bleed">
+	<?php //max image size for featured image on posts 2000x1200
+		the_post_thumbnail( 'oceanreef-full-bleed'); 
+	?>
+	<div id="intro-section">
+
+		<div class="bg">			
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header><!-- .entry-header -->
+		</div>
+		
+		<div class="intro-text">
+			<p>Here is the intro text. Use ACF for this.Here is the intro text. Use ACF for this.Here is the intro text. Use ACF for this.Here is the intro text. Use ACF for this.</p>
+		</div><!-- .intro-text -->
+	</div><!-- .intro-section -->
+	
+	</figure><!-- .featured-image .full-bleed -->
+	<?php } ?>
+
+	
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

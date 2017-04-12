@@ -285,31 +285,33 @@ textarea {
 /* line 1, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Arial, sans-serif; }
+  font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Arial, sans-serif;
+  color: #002c3d;
+  letter-spacing: 1.5px; }
 
-/* line 6, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
+/* line 8, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
 h1 {
-  font-size: 2.6em; }
-
-/* line 10, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
-h2 {
   font-size: 2.2em; }
 
-/* line 14, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
-h3 {
+/* line 12, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
+h2 {
   font-size: 2em; }
 
-/* line 18, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
-h4 {
+/* line 16, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
+h3 {
   font-size: 1.8em; }
 
-/* line 22, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
-h5 {
+/* line 20, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
+h4 {
   font-size: 1.6em; }
 
-/* line 26, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
-h6 {
+/* line 24, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
+h5 {
   font-size: 1.4em; }
+
+/* line 28, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_headings.scss */
+h6 {
+  font-size: 1.2em; }
 
 /* line 1, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/typography/_copy.scss */
 p {
@@ -569,15 +571,15 @@ textarea {
 --------------------------------------------------------------*/
 /* line 1, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/navigation/_links.scss */
 a {
-  color: #404040; }
+  color: #ff3e48; }
   /* line 4, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/navigation/_links.scss */
   a:visited {
-    color: #808284; }
+    color: #ff3e48; }
   /* line 9, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/navigation/_links.scss */
   a:hover,
   a:focus,
   a:active {
-    color: #ff3e48; }
+    color: #ee2d37; }
   /* line 12, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/navigation/_links.scss */
   a:focus {
     outline: thin dotted; }
@@ -899,51 +901,53 @@ a {
   padding: 1em;
   font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Arial, sans-serif;
   color: #fff;
-  background-color: #fff; }
-  @media screen and (min-width: 600px) {
+  background-color: #fff;
+  max-width: 1080px;
+  margin: 0 auto; }
+  @media screen and (min-width: 900px) {
     /* line 10, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
     .site-header {
-      padding: 1em 2em; } }
+      padding: 1em 0; } }
 
-/* line 22, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+/* line 24, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
 .site-branding {
   display: flex;
   min-height: 65px; }
 
-/* line 27, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+/* line 29, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
 .custom-logo-link {
   margin-right: 1em; }
-  /* line 29, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+  /* line 31, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
   .custom-logo-link img {
     display: block;
     height: 65px;
     /* Same as site-branding */
     width: auto; }
 
-/* line 36, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+/* line 38, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
 .site-branding__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 65px; }
 
-/* line 43, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+/* line 45, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
 .site-title {
   margin: 0;
   padding: 0;
   font-size: 1.6em;
   font-weight: 900;
   line-height: 1em; }
-  /* line 50, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+  /* line 52, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
   .site-title a {
     color: white;
     text-decoration: none; }
-    /* line 55, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+    /* line 57, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
     .site-title a:hover,
     .site-title a:focus {
       text-decoration: underline; }
 
-/* line 61, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+/* line 63, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
 .site-description {
   margin: 0;
   font-size: .9em;
@@ -951,17 +955,17 @@ a {
   font-weight: 100; }
 
 @media screen and (min-width: 900px) {
-  /* line 69, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+  /* line 71, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
   .site-header {
     display: flex;
     justify-content: space-between; }
-  /* line 74, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+  /* line 76, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
   .site-branding {
-    width: 35%;
+    width: 15%;
     flex: 1 0 auto; }
-  /* line 79, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
+  /* line 81, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header.scss */
   .site-navigation {
-    width: 55%; } }
+    width: 85%; } }
 
 /*
 Header Menu
@@ -978,60 +982,62 @@ Header Menu
     list-style: none;
     margin: 0;
     padding-top: 1em;
-    padding-left: 0; }
-    /* line 15, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+    padding-left: 0;
+    font-size: .65em; }
+    /* line 16, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
     .main-navigation ul ul {
       display: none;
       top: 1.5em;
       z-index: 99999; }
-      /* line 20, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+      /* line 21, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
       .main-navigation ul ul ul {
         top: 0; }
-      /* line 24, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+      /* line 25, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
       .main-navigation ul ul li {
         padding-left: 1em; }
-        /* line 28, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+        /* line 29, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
         .main-navigation ul ul li:hover > ul,
         .main-navigation ul ul li.focus > ul {
           left: 100%; }
-      /* line 33, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+      /* line 34, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
       .main-navigation ul ul a {
         width: 200px; }
-    /* line 39, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+    /* line 40, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
       left: auto; }
-  /* line 44, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 45, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation li {
     position: relative; }
-  /* line 48, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 49, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation a {
     display: inline-block;
     width: 100%;
     padding: 0.5em 1em 0.5em 0;
     text-decoration: none;
-    color: #002d41;
-    text-transform: uppercase; }
-  /* line 58, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+    color: #002c3d;
+    text-transform: uppercase;
+    font-weight: 700; }
+  /* line 60, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation a:hover,
   .main-navigation a:focus {
     text-decoration: underline; }
-  /* line 65, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 67, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation .current_page_item > a,
   .main-navigation .current-menu-item > a,
   .main-navigation .current_page_ancestor > a,
   .main-navigation .current-menu-ancestor > a {
     color: #ff3e48; }
-  /* line 70, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 72, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation .menu-item-has-children,
   .main-navigation .page-item-has-children {
     min-width: 218px; }
-  /* line 74, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 76, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation .menu-item-has-children > a,
   .main-navigation .page_item_has_children > a {
     padding-right: 2em; }
 
-/* line 79, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+/* line 81, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
 button.dropdown-toggle {
   position: absolute;
   right: 0;
@@ -1041,7 +1047,7 @@ button.dropdown-toggle {
   line-height: 1.5em;
   padding: 0.4em 1em 0.4em 0.5em; }
 
-/* line 89, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+/* line 91, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
 .menu-toggle {
   position: absolute;
   top: 0;
@@ -1051,52 +1057,52 @@ button.dropdown-toggle {
   padding: 0.6em 0.8em;
   font-size: 80%;
   text-transform: uppercase;
-  color: white;
+  color: red;
   border: 1px solid rgba(255, 255, 255, 0.3); }
 
 /* Toggle small menu and sub-menus on */
-/* line 104, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+/* line 106, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
 .toggled-on ul,
 .sub-menu.toggled-on {
   display: block; }
 
 @media screen and (min-width: 600px) {
-  /* line 109, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 111, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .menu-toggle {
     display: none; }
-  /* line 116, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 118, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation .menu-item-has-children > a,
   .main-navigation .page_item_has_children > a {
     padding-right: 2em;
     background: rgba(255, 255, 255, 0.1); }
-  /* line 121, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 123, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation ul {
     display: block;
     display: flex;
     flex-wrap: wrap; }
-    /* line 126, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+    /* line 128, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
     .main-navigation ul ul {
       flex-direction: column;
       background: rgba(255, 255, 255, 0.1);
       margin-left: 0; }
-      /* line 131, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+      /* line 133, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
       .main-navigation ul ul li {
         padding-left: 0; }
-        /* line 134, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+        /* line 136, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
         .main-navigation ul ul li a {
           width: 218px;
           background-color: #d9ecf3; }
-    /* line 143, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+    /* line 145, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
     .main-navigation ul li a {
       padding: 0.4em 1em; } }
 
 @media screen and (min-width: 900px) {
-  /* line 153, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+  /* line 155, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
   .main-navigation {
     position: absolute;
     width: 90%;
     right: 0; }
-    /* line 159, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
+    /* line 161, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/header/_header-menu.scss */
     .main-navigation ul {
       justify-content: flex-end;
       padding-top: 0;
@@ -1135,88 +1141,91 @@ button.dropdown-toggle {
       color: white; }
 
 /* line 30, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
-.entry-title {
-  margin: 0.125em 0 0.25em;
-  font-size: 2.5em; }
+h1.entry-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 1.4em; }
   @media screen and (min-width: 900px) {
     /* line 30, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
-    .entry-title {
-      font-size: 3em; } }
-  /* line 38, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
-  .entry-title a {
+    h1.entry-title {
+      font-size: 1.2em; } }
+  /* line 41, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  h1.entry-title a {
     text-decoration: none;
     color: #444444; }
-    /* line 43, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
-    .entry-title a:focus,
-    .entry-title a:hover {
+    /* line 46, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    h1.entry-title a:focus,
+    h1.entry-title a:hover {
       border-bottom: 5px solid #ff3e48; }
 
-/* line 49, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 52, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .entry-meta {
   font-size: 90%; }
-  /* line 52, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  /* line 55, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
   .entry-meta a {
     font-weight: 700;
     text-decoration: none;
     color: #444444; }
-    /* line 58, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    /* line 61, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
     .entry-meta a:focus,
     .entry-meta a:hover {
       color: #444444;
       border-bottom: 5px solid #ff3e48; }
 
-/* line 66, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 69, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .byline::after {
   content: "|";
   margin: 0 0.5em; }
 
-/* line 74, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 77, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .comments-link::before,
 .edit-link::before {
   content: "|";
   margin: 0 0.5em; }
 
-/* line 81, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 84, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .byline,
 .updated:not(.published) {
   display: none; }
 
-/* line 86, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 89, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .single .byline,
 .group-blog .byline {
   display: inline; }
 
-/* line 90, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 93, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .extra {
   display: none; }
 
 /* Custom Post Meta rules for single post / no sidebar. */
-/* line 98, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 101, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .no-sidebar .entry-meta {
   margin-top: 1.5em; }
 
 @media screen and (min-width: 900px) {
-  /* line 105, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  /* line 108, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
   .no-sidebar .post-content__wrap .entry-meta {
     margin-top: 2.25em;
     font-size: 80%; }
-    /* line 109, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    /* line 112, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
     .no-sidebar .post-content__wrap .entry-meta a {
       font-size: 100%;
       display: block;
       border-bottom: 3px solid white; }
-      /* line 115, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+      /* line 118, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
       .no-sidebar .post-content__wrap .entry-meta a:hover,
       .no-sidebar .post-content__wrap .entry-meta a:focus {
         border-bottom-color: #ff3e48; }
-  /* line 124, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  /* line 127, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
   .no-sidebar .post-content__wrap .byline,
   .no-sidebar .post-content__wrap .posted-on,
   .no-sidebar .post-content__wrap .comments-link,
   .no-sidebar .post-content__wrap .edit-link {
     display: block;
     margin-bottom: 1em; }
-    /* line 129, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    /* line 132, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
     .no-sidebar .post-content__wrap .byline:before,
     .no-sidebar .post-content__wrap .byline:after,
     .no-sidebar .post-content__wrap .posted-on:before,
@@ -1227,57 +1236,88 @@ button.dropdown-toggle {
     .no-sidebar .post-content__wrap .edit-link:after {
       margin: 0;
       content: ""; }
-  /* line 135, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  /* line 138, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
   .no-sidebar .post-content__wrap .extra {
     display: inline; } }
 
-/* Single Post Featured Images */
-/* line 144, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* Page Header Featured Images */
+/* line 147, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .full-bleed {
   width: 100vw;
-  max-height: 1200px;
+  max-height: 800px;
   margin-left: -1em;
   margin-top: -1.5em;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
   overflow: hidden; }
   @media screen and (min-width: 600px) {
-    /* line 144, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    /* line 147, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
     .full-bleed {
       margin-left: -2em; } }
   @media screen and (min-width: 900px) {
-    /* line 144, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    /* line 147, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
     .full-bleed {
       /*margin-top: 1.5em;*/
       margin-right: -2em; } }
   @media screen and (min-width: 1080px) {
-    /* line 144, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    /* line 147, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
     .full-bleed {
       margin-right: calc( ((-100vw + 1080px)/2) - 2em);
       margin-left: calc( ((-100vw + 1080px)/2) - 2em); } }
-  /* line 166, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  /* line 167, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
   .full-bleed img {
     display: block;
     margin: 0 auto; }
 
-/* line 174, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 175, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .page-content,
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0; }
 
-/* line 178, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 179, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-/* line 183, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 184, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .entry-footer {
   margin: 1.5em 0; }
 
-/* line 187, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+/* line 188, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
 .site-content {
   padding-top: 1.5em; }
+
+/* line 192, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+.bg {
+  background: url(http://www.oceanreef.dev/wp-content/uploads/2017/04/white-bg.jpg) no-repeat;
+  height: 370px;
+  max-width: 1080px;
+  margin: 0 auto; }
+
+/* line 199, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+#intro-section {
+  position: relative; }
+
+/* line 203, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+.intro-text {
+  position: absolute;
+  height: 280px;
+  background-color: rgba(0, 44, 62, 0.88);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 90px; }
+  /* line 217, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+  .intro-text p {
+    color: #fff;
+    text-align: center;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1em; }
+  @media screen and (min-width: 900px) {
+    /* line 203, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/primary/_posts-and-pages.scss */
+    .intro-text {
+      padding: 3em 6em; } }
 
 /*--------------------------------------------------------------
 ## Archive
@@ -1426,7 +1466,9 @@ a.sub-foot-link {
 
 /* line 98, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/footer/_footer.scss */
 .site-info {
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-size: .7em;
+  color: #002c3d; }
 
 /*--------------------------------------------------------------
 # Widgets
@@ -1636,15 +1678,18 @@ h2.widget-title {
 .footer-wrap .widget {
   padding: 2em;
   text-align: center; }
+  /* line 228, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/secondary/_widgets.scss */
+  .footer-wrap .widget a {
+    color: #002c3d; }
 
 @media screen and (min-width: 900px) {
-  /* line 232, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/secondary/_widgets.scss */
+  /* line 236, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/secondary/_widgets.scss */
   .footer-wrap {
     display: flex;
     max-width: 1080px;
     margin: 0 auto;
     padding-top: 2em; }
-    /* line 238, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/secondary/_widgets.scss */
+    /* line 242, /Volumes/Macintosh HD/Users/Jee/Documents/Websites/www.oceanreef.dev/wp-content/themes/oceanreef/sass/site/secondary/_widgets.scss */
     .footer-wrap .widget:not(:last-child) {
       text-align: left;
       border-right: 1px solid #fff; } }

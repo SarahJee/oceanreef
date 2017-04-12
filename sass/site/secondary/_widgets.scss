@@ -224,6 +224,10 @@ h2.widget-title {
 	.widget {
 		padding: 2em;
 		text-align: center;
+		
+		a {
+			color:$color__body;
+		}
 	}
 }
 
