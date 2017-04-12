@@ -7,11 +7,17 @@
  * @package Skinny_Minnie
  */
 
-if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
-	return;
-}
-?>
 
-	<aside id="footer-widget-area" class="widget-area footer-widgets" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-footer' ); ?>
-	</aside><!-- #footer-widgets -->
+	if ( ! is_active_sidebar( 'sidebar-footer' ) ) {
+		return;
+	}
+
+	 ?>
+ 
+		<aside id="footer-widget-area" class="widget-area footer-widgets" role="complementary">
+			<div class="footer-wrap">
+				<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+			</div>
+		</aside><!-- #footer-widgets -->
+	</div><!-- .site-content -->
+	

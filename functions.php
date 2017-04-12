@@ -47,7 +47,6 @@ function oceanreef_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'header-nav' => esc_html__( 'Main Navigation', 'oceanreef' ),
-		'social' => esc_html__( 'Social Menu', 'oceanreef' ),
 	) );
 
 	/*
@@ -128,7 +127,7 @@ add_action( 'widgets_init', 'oceanreef_widgets_init' );
 function oceanreef_scripts() {
 	
 	//Add Google Fonts
-	wp_enqueue_style( 'oceanreef-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,800" rel="stylesheet' );
+	wp_enqueue_style( 'oceanreef-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet' );
 	
 	wp_enqueue_style( 'oceanreef-style', get_stylesheet_uri() );
 

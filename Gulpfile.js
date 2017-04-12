@@ -58,13 +58,14 @@ gulp.task('javascript', function() {
 gulp.task('watch', function() {
 	browserSync.init({ 
 		open: 'external',
-		proxy: 'www.skinny.dev',
-		port: 8080
+		proxy: 'www.oceanreef.dev',
+		port: 8080,
+		injectChanges: true
 	});
-	gulp.watch([root + '**/*.css', root + '**/*.scss' ], ['css']);
+	gulp.watch([root + '**/*.scss' ], ['css']);
 	gulp.watch(js + '**/*.js', ['javascript']);
 	gulp.watch(img + 'RAW/**/*.{jpg,JPG,png}', ['images']);
-	gulp.watch(root + '**/*').on('change', browserSync.reload);
+	gulp.watch(root + '**/*.php').on('change', browserSync.reload);
 });
 
 
