@@ -127,7 +127,7 @@ add_action( 'widgets_init', 'oceanreef_widgets_init' );
 function oceanreef_scripts() {
 	
 	//Add Google Fonts
-	wp_enqueue_style( 'oceanreef-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet' );
+	wp_enqueue_style( 'oceanreef-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Schoolbell');
 	
 	wp_enqueue_style( 'oceanreef-style', get_stylesheet_uri() );
 

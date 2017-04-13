@@ -13,6 +13,14 @@ textarea {
 	}
 }
 
+p {
+	font-weight: 300;
+}
+
+.handwritten {
+	font-family: $font__child;
+}
+
 @import "headings";
 
 @import "copy";

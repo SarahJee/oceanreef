@@ -198,6 +198,7 @@ h1.entry-title {
 
 #intro-section {
 	position: relative;
+	z-index: -1;
 }
 
 .intro-text {
@@ -210,22 +211,96 @@ h1.entry-title {
     right: 0;
     top: 90px;
     
-    @media screen and (min-width: $query__medium) {
-	    
-	    }
-    
     	p {
+	    	font-size: .85em;
 	    	color: #fff;
 	    	text-align: center;
 	    	max-width: 1080px;
 	    	margin: 0 auto;
-	    	padding: 1em;
-    	}
+	    	padding: 2em 3em;
     	
-        @media screen and (min-width: $query__medium) {
-	    	padding: 3em 6em;
+        @media screen and (min-width: $query__small) {
+	    	padding: 2em 7em;
+	    	font-size: 1em;
 	    }
+	    
+	    @media screen and (min-width: $query__medium) {
+		    padding-top:4em;
+		}
+	}
 }
+
+#seven-cs-title {
+	background-color: #00a6b8;
+	width: 100%;
+	height: 60px;
+	position: relative;
+	
+	@media screen and (min-width: $query__small) {
+		margin: -40px auto 0;
+		max-width: 300px;
+	}
+
+		p {
+			font-family: $font__child;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 1.5em;
+			padding-top: .5em;
+			padding-left: 1em;
+	
+		@media screen and (min-width: $query__small) {
+			padding-top: .4em;
+			}
+		}
+	
+		img {
+			position: absolute;
+			right: -20px;
+			top: -40px;
+			width: 120px;
+		}
+	}
+
+#seven-cs-boxes {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 3em;
+		
+	.seven-cs-box {
+		background-color: #009bee;
+		border: solid #fff 1px;
+		padding: .8em;
+		min-height: 150px;
+		flex-grow: 2;
+		justify-content: space-between;
+		margin: 0;
+	
+		@media screen and (min-width: $query__medium) {
+			position: relative;
+			}
+		}
+			p {
+			font-family: $font__child;	
+			font-size: 1.2em;
+			color: #fff;
+			margin-top: 2em;
+			/* Safari */
+			-webkit-transform: rotate(-45deg);
+			/* Firefox */
+			-moz-transform: rotate(-45deg);
+			/* IE */
+			-ms-transform: rotate(-45deg);			
+			/* Opera */
+			-o-transform: rotate(-45deg);
+			/* Internet Explorer */
+			filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+			@media screen and (min-width: $query__medium) {
+			position: absolute;
+			}
+		}
+	}
 
 
  

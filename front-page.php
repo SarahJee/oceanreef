@@ -28,7 +28,7 @@ get_header(); ?>
 		</div>
 		
 		<div class="intro-text">
-			<p>Here is the intro text. Use ACF for this.Here is the intro text. Use ACF for this.Here is the intro text. Use ACF for this.Here is the intro text. Use ACF for this.</p>
+			<?php the_field( 'banner_intro' ); ?>
 		</div><!-- .intro-text -->
 	</div><!-- .intro-section -->
 	
@@ -39,6 +39,19 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<div id="seven-cs-title">
+			<p>The Seven C's</p>
+			<img src="http://www.oceanreef.dev/wp-content/uploads/2017/04/sevencs.png">
+		</div>
+		<div id="seven-cs-boxes">
+			<div class="seven-cs-box"><p>courage</p></div>
+			<div class="seven-cs-box"><p>courtesy</p></div>
+			<div class="seven-cs-box"><p>cooperation</p></div>
+			<div class="seven-cs-box"><p>commitment</div>
+			<div class="seven-cs-box"><p>common sense</p></div>
+			<div class="seven-cs-box"><p>consideration</p></div>
+			<div class="seven-cs-box"><p>care</div>
+		</div>
 			<?php
 			while ( have_posts() ) : the_post();
 
