@@ -41,14 +41,22 @@ function oceanreef_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'oceanreef-full-bleed', 1080, 800, true);
+	add_image_size( 'oceanreef-hero', 1080, 376, true);
 	add_image_size( 'oceanreef-index-img', 800, 400, true);
 
-	// This theme uses wp_nav_menu() in one location.
+	// This theme uses two wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'header-nav' => esc_html__( 'Main Navigation', 'oceanreef' ),
+		'utility-nav' => esc_html__( 'Utility Navigation', 'oceanreef' ),
 	) );
-
+//Add phone number to end of utility nav	
+	add_filter( 'wp_nav_menu_items', 'add_phone_to_nav', 10, 2 );
+	function add_phone_to_nav( $items, $args ) {
+		if( $args->theme_location == 'utility-nav' )
+	    $items .= '<span><a href="tel:+61893073444">(08) 9307 3444</a></span>';
+	    return $items;
+	}
+	
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.

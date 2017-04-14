@@ -1,3 +1,47 @@
+/* Utility Navigation */
+#utility-navigation {
+	display: block;
+	background-color: $color__body;
+	
+	.menu-utility-menu-container {
+		
+		ul {
+		list-style: none;
+		padding: .2em;
+		text-align: center;
+		
+			li {
+				display: inline;
+				text-transform: uppercase;
+				font-size: .75em;
+				letter-spacing: .5px;
+				
+				&:after {
+					content: "|";
+					color: #fff;
+				}
+				
+				a {
+					color: #fff;
+					text-decoration: none;
+					padding-right: .5em;
+				}
+			}
+		}	
+	}
+}
+
+.menu-utility-menu-container ul span a {
+		font-size: .8em;
+		color: #fff;
+		text-decoration: none;
+	}
+
+
+
+
+/* Main Navigation */
+
 .main-navigation {
 	display: block;
 	font-family: $font__sans;
@@ -128,7 +172,7 @@ button.dropdown-toggle {
 			ul {
 				flex-direction: column;
 				background: hsla(0, 0%, 100%, .1);
-				margin-left: 0;
+				/*margin-left: 0;*/
 
 				li {
 					padding-left: 0;
@@ -161,6 +205,10 @@ button.dropdown-toggle {
 		ul {
 			justify-content: flex-end;
 			padding-top: 0;
+			
+			a {
+				font-size: 1.2em;
+			}
 			
 			/*If you want dropdowns to open on hover, uncomment this:
 			

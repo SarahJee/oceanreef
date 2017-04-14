@@ -22,7 +22,14 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'oceanreef' ); ?></a>
+
+	<nav id="utility-navigation" class="utility-navigation" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'utility-nav', 'menu_id' => 'utility-navigation' ) ); ?>	
+	</nav><!--#utility-navigation-->
+
+	
 	<header id="masthead" class="site-header" role="banner">
+				
 		<div class="site-branding">
 			
 			<?php /* Output logo added in customiser */ the_custom_logo();?>
@@ -47,14 +54,31 @@
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'oceanreef' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'header-nav', 'menu_id' => 'main-navigation' ) ); ?>
 		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</header><!-- #masthead -->
+		<div class="blue-band">
+		
+		<figure class="featured-image">
+			<?php // Use featured image for hero banner
+			if ( has_post_thumbnail() ) { ?>
+			
+			<?php //max image size for featured image on posts 1080x376
+				the_post_thumbnail( 'oceanreef-hero'); 
+			?><?php } ?>
+		</figure><!-- .featured-image .full-bleed -->
+		</div>
+		<div id="intro-section">
+
+			<div class="bg">			
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</header><!-- .entry-header -->
+			</div><!-- .bg -->
+			
+			<div class="intro-text">
+				<?php the_field( 'banner_intro' ); ?>
+			</div><!-- .intro-text -->
+			
+		</div><!-- .intro-section -->
 	
-	<!--Add Header Image via Customiser-->
-	<?php if ( get_header_image() && is_front_page() ) : ?>
-	<figure class="header-image">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-		</a>
-	</figure><!-- .header-image -->
-	<?php endif; // End header image check. ?>
+	
 	<div id="content" class="site-content">

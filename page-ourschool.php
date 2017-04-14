@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Default
+ * Template Name: Our School
   *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -13,6 +13,10 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+			
+			<div class="circular-img">
+				<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/04/ocean-reef-student.png"/>
+			</div>
 
 			<?php
 			while ( have_posts() ) : the_post();
