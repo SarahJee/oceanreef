@@ -1,136 +1,123 @@
-/* global oceanreefScreenReaderText */
 /**
- * Theme functions file.  
+ * navigation.js
  *
- * Contains handlers for navigation and widget area.
- */ 
+ * Handles toggling the navigation menu for small screens and enables tab
+ * support for dropdown menus.
+ */
+( function( $ ) {
+	var container, button, menu, links, subMenus;
 
-(function( $ ) { 
-	var masthead, menuToggle, siteNavigation;
+	container = document.getElementById( 'site-navigation' );
+	if ( ! container ) {
+		return;
+	}
+
+	button = document.getElementsByClassName( 'menu-toggle' )[0];
+	if ( 'undefined' === typeof button ) {
+		return;
+	}
+
+	menu = container.getElementsByTagName( 'ul' )[0];
+
+	// Hide menu toggle button if menu is empty and return early.
+	if ( 'undefined' === typeof menu ) {
+		button.style.display = 'none';
+		return;
+	}
+
+	menu.setAttribute( 'aria-expanded', 'false' );
+	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+		menu.className += ' nav-menu';
+	}
+
+	button.onclick = function() {
+		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+			container.className = container.className.replace( ' toggled', '' );
+			button.setAttribute( 'aria-expanded', 'false' );
+			menu.setAttribute( 'aria-expanded', 'false' );
+		} else {
+			container.className += ' toggled';
+			button.setAttribute( 'aria-expanded', 'true' );
+			menu.setAttribute( 'aria-expanded', 'true' );
+		}
+	};
+
+	// Get all the link elements within the menu.
+	links    = menu.getElementsByTagName( 'a' );
+	subMenus = menu.getElementsByTagName( 'ul' );
+
+	// Set menu items with submenus to aria-haspopup="true".
+	for ( var i = 0, len = subMenus.length; i < len; i++ ) {
+		subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
+	}
+
+	// Each time a menu link is focused or blurred, toggle focus.
+	for ( i = 0, len = links.length; i < len; i++ ) {
+		links[i].addEventListener( 'focus', toggleFocus, true );
+		links[i].addEventListener( 'blur', toggleFocus, true );
+	}
+
+	/**
+	 * Sets or removes .focus class on an element.
+	 */
+	function toggleFocus() {
+		var self = this;
+
+		// Move up through the ancestors of the current link until we hit .nav-menu.
+		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+
+			// On li elements toggle the class .focus.
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+					self.className = self.className.replace( ' focus', '' );
+				} else {
+					self.className += ' focus';
+				}
+			}
+
+			self = self.parentElement;
+		}
+	}
 
 	function initMainNavigation( container ) {
+		// Add dropdown toggle that display child menu items.
+		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
 
-		// Add dropdown toggle that displays child menu items.
-		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( $( '<i>', { 
-				'class': 'fa fa-chevron-down dropdown-symbol'  
-				}) );
-
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
+	if ($(window).width() < 1018) {
+		 //Toggle buttons and submenu items with active children menu items.
+		container.find( '.current-menu-ancestor > button' ).addClass( 'toggle-on' );
+		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+		}
 		
-		// Toggle buttons and submenu items with active children menu items.
-		//container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
-		//container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
-
 		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this = $( this ),
-				screenReaderSpan = _this.find( '.screen-reader-text' );
-				dropdownSymbol = _this.find( '.dropdown-symbol' );
-				dropdownSymbol.toggleClass( 'fa-chevron-up fa-chevron-down' );
-				
+			var _this = $( this );
 			e.preventDefault();
-			_this.toggleClass( 'toggled-on' );
+			_this.toggleClass( 'toggle-on' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
-
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-
-			screenReaderSpan.text( screenReaderSpan.text() === oceanreefScreenReaderText.expand ? oceanreefScreenReaderText.collapse : oceanreefScreenReaderText.expand );
-		});
+			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+		} );
 	}
-
 	initMainNavigation( $( '.main-navigation' ) );
 
-	masthead       = $( '#masthead' );
-	menuToggle     = masthead.find( '.menu-toggle' );
-	siteNavigation = masthead.find( '.main-navigation > div > ul' );
+	// Re-initialize the main navigation when it is updated, persisting any existing submenu expanded states.
 
-	// Enable menuToggle.
-	(function() {
+	$( document ).on( 'customize-preview-menu-refreshed', function( e, params ) {
+		if ( 'primary' === params.wpNavMenuArgs.theme_location ) {
+			initMainNavigation( params.newContainer );
 
-		// Return early if menuToggle is missing.
-		if ( ! menuToggle.length ) {
-			return;
+			// Re-sync expanded states from oldContainer.
+			params.oldContainer.find( '.dropdown-toggle.toggle-on' ).each(function() {
+				var containerId = $( this ).parent().prop( 'id' );
+				$( params.newContainer ).find( '#' + containerId + ' > .dropdown-toggle' ).triggerHandler( 'click' );
+			});
 		}
-
-		// Add an initial values for the attribute.
-		menuToggle.add( siteNavigation ).attr( 'aria-expanded', 'false' );
-
-		menuToggle.on( 'click.oceanreef', function() {
-			$( siteNavigation.closest( '.main-navigation' ), this ).toggleClass( 'toggled-on' );
-
-			$( this )
-				.add( siteNavigation )
-				.attr( 'aria-expanded', $( this ).add( siteNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-		});
-	})();
-
-	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
-	(function() {
-		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
-			return;
-		}
-
-		// Toggle `focus` class to allow submenu access on tablets.
-		function toggleFocusClassTouchScreen() {
-			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
-
-				$( document.body ).on( 'touchstart.oceanreef', function( e ) {
-					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
-						$( '.main-navigation li' ).removeClass( 'focus' );
-					}
-				});
-
-				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
-					.on( 'touchstart.oceanreef', function( e ) {
-						var el = $( this ).parent( 'li' );
-
-						if ( ! el.hasClass( 'focus' ) ) {
-							e.preventDefault();
-							el.toggleClass( 'focus' );
-							el.siblings( '.focus' ).removeClass( 'focus' );
-						}
-					});
-
-			} else {
-				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.oceanreef' );
-			}
-		}
-
-		if ( 'ontouchstart' in window ) {
-			$( window ).on( 'resize.oceanreef', toggleFocusClassTouchScreen );
-			toggleFocusClassTouchScreen();
-		}
-
-		siteNavigation.find( 'a' ).on( 'focus.oceanreef blur.oceanreef', function() {
-			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
-		});
-	})();
-
-	// Add the default ARIA attributes for the menu toggle and the navigations.
-	function onResizeARIA() {
-		if ( 'block' === $( '.menu-toggle' ).css( 'display' ) ) {
-
-			if ( menuToggle.hasClass( 'toggled-on' ) ) {
-				menuToggle.attr( 'aria-expanded', 'true' );
-			} else {
-				menuToggle.attr( 'aria-expanded', 'false' );
-			}
-
-			if ( siteNavigation.closest( '.main-navigation' ).hasClass( 'toggled-on' ) ) {
-				siteNavigation.attr( 'aria-expanded', 'true' );
-			} else {
-				siteNavigation.attr( 'aria-expanded', 'false' );
-			}
-		} else {
-			menuToggle.removeAttr( 'aria-expanded' );
-			siteNavigation.removeAttr( 'aria-expanded' );
-			menuToggle.removeAttr( 'aria-controls' );
-		}
-	}
-
-	$( document ).ready( function() {
-		$( window ).on( 'load.oceanreef', onResizeARIA );
-		$( window ).on( 'resize.oceanreef', onResizeARIA );
 	});
 
-})( jQuery );
+	
+	//Hamburger Icon
+		$('#nav-icon1').click(function(){
+		$(this).toggleClass('open');
+	});
+
+} )( jQuery );

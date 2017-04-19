@@ -49,14 +49,23 @@
 				endif; ?>
 				</div><!-- .site-branding-text -->
 		</div><!-- .site-branding -->
+		
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				
+					<div id="nav-icon1">
+					  <span></span>
+					  <span></span>
+					  <span></span>
+					</div><!-- #nav-icon1 -->
+				
+				<span class="menu"><?php esc_html_e( '', 'iqconstruction' ); ?></span></button>
+
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'oceanreef' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'header-nav', 'menu_id' => 'main-navigation' ) ); ?>
 		</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
-		<div class="blue-band">
-		
+	
 		<figure class="featured-image">
 			<?php // Use featured image for hero banner
 			if ( has_post_thumbnail() ) { ?>
@@ -65,7 +74,7 @@
 				the_post_thumbnail( 'oceanreef-hero'); 
 			?><?php } ?>
 		</figure><!-- .featured-image .full-bleed -->
-		</div>
+
 		<div id="intro-section">
 
 			<div class="bg">			

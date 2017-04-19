@@ -203,7 +203,12 @@ h1.entry-title {
 	width: 100%;
 	max-width: 1080px;
 	max-height: 376px;
+	
+	img {
+		vertical-align: middle; 
+	}
 }
+
 
 .bg {
 	background: url(http://www.oceanreef.dev/wp-content/uploads/2017/04/white-bg.jpg) no-repeat;
@@ -310,15 +315,15 @@ h1.entry-title {
 
 	@media screen and (min-width: $query__small) {
 		margin-top: 2em;
-		margin-left: 0;
-		margin-right: 0;
-		margin-bottom: 2em;
+		margin-left: 2em;
+		margin-right: 2em;
+		margin-bottom: 0;
 	}
 		
 	@media screen and (min-width: $query__medium) {
 		
-		margin-left: -2em; 
-		margin-right: -2em;
+		margin-left: 0; 
+		margin-right: 0;
 	}
 
 		
@@ -366,7 +371,7 @@ h1.entry-title {
 	}
 }
 
-/* Our School Styles */
+/* Our School Template Styles */
 
 .circular-img img {
     margin: 0 auto;
@@ -384,11 +389,39 @@ h1.entry-title {
 	
 }
 
-
- 
-
+/* Drum-Corp Template Styles */
 
 
+#image_text_row {
+	
+	h4 {
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+		
+	p {
+		text-align: center;
+		font-size: .8em;
+		line-height: 2;
+	}	
+
+
+@media screen and (min-width: $query__medium) {
+		
+	display: flex;
+		
+		.one-third_img {
+			min-width: 340px;
+			margin: 2em 0;
+			
+		}
+		
+		.two-thirds_text {
+			flex-grow: 2;
+			margin: 0 2em;
+		}
+	}
+}
 
 
 

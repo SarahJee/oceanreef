@@ -36,9 +36,7 @@
 		color: #fff;
 		text-decoration: none;
 	}
-
-
-
+	
 
 /* Main Navigation */
 
@@ -100,9 +98,16 @@
 		font-weight: 700;
 	}
 	
+	a::before {
+	background: url('http://www.oceanreef.dev/wp-content/uploads/2017/04/home.png')no-repeat;
+	height: 55px;
+	width: 55px;
+	}
+	
 	a:hover,
 	a:focus {
-		text-decoration: underline;
+		text-decoration: none;
+		color: $color__interactive;
 	}
 
 	.current_page_item > a,
@@ -122,28 +127,161 @@
 	}
 }
 
-button.dropdown-toggle {
-	position: absolute;
-	right: 0;
-	border: none;
-	background: inherit;
-	color: white;
-	line-height: 1.5em;
-	padding: .4em 1em .4em .5em;
+/* Mobile Menu */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
 }
 
 .menu-toggle {
 	position: absolute;
 	top: 0;
 	right: 0;
-	display: block;
-	margin: 1.2em 1.2em 0 0;
-	padding: .6em .8em;
-	font-size: 80%;
+	z-index: 100;
+	font-size: 1em;
 	text-transform: uppercase;
-	color: red;
-	border: 1px solid hsla(0, 0%, 100%, .3);
+	color: $color__body;
+	transition: all ease-out 400ms;
+	font-weight: 600;
+	border-radius: 0;
+	display: block;
 }
+
+
+button.menu-toggle {
+	background: transparent;
+	border: transparent;
+}
+
+
+
+/* Hamburger */
+/* https://codepen.io/designcouch/pen/Atyop */
+
+#nav-icon1 {
+  width: 40px;
+  height: 25px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  margin: 1em;
+}
+
+#nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #ccd1d4;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 10px;
+  background-color: #4c5f67;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 20px;
+  background: $color__body;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 20px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -50px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 20px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+#nav-icon1.open {
+	margin: 0 auto 10px;
+}
+
+/* Make sure the button doesn't hide when menu is open. */
+
+.toggled .menu-toggle.hide {
+	top: 1em;
+}
+
+
+
+@media screen and (min-width: 65em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+/* Hovering menu */
+
+.main-navigation.toggled {
+	/*top: 13em;*/
+	padding: 1em;
+	z-index: 1;
+	margin-top: 0px;
+}
+
+.main-navigation.toggled:focus {
+	outline: none;
+}
+
+.nav-menu {
+	padding-right: 1em;
+	margin-bottom: 3em;
+}
+
+.main-navigation.toggled ul {
+	max-height: calc(100vh - 8em);
+	overflow-y: scroll;
+}
+
+.main-navigation.toggled ul ul {
+	display: none;
+}
+
+.main-navigation.toggled ul ul.toggled-on,
+.main-navigation.toggled ul ul.toggled-on > ul {
+	display: block;
+}
+
+
+
 
 /* Toggle small menu and sub-menus on */
 .toggled-on ul,
@@ -158,6 +296,7 @@ button.dropdown-toggle {
 	
 	.main-navigation {
 		
+		
 		.menu-item-has-children > a,
 		.page_item_has_children > a {
 			padding-right: 2em;
@@ -168,6 +307,7 @@ button.dropdown-toggle {
 			display: block;
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: flex-end;
 			
 			ul {
 				flex-direction: column;
@@ -180,6 +320,7 @@ button.dropdown-toggle {
 					a {
 						width: 218px;
 						background-color: $color__skin;
+						display: inline;
 					}
 				}
 			}
