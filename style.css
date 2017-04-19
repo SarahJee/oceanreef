@@ -2336,4 +2336,26 @@ object {
 	display: block;
 }
 
+/*--------------------------------------------------------------
+## Filter Galery
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
 /*# sourceMappingURL=sass/maps/style.css.map */

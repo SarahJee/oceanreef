@@ -155,6 +155,19 @@ function oceanreef_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+
+    // scrap WP jquery and register from google cdn - load in footer
+    wp_deregister_script('oceanreef-jquery');
+    wp_register_script('oceanreef-jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js", false, null, true );    
+    
+    // load jquery
+    wp_enqueue_script('oceanreef-jquery');
+    
+    // load jquery for photo gallery
+    wp_enqueue_script( 'oceanreef-photogallery-js',  get_stylesheet_directory_uri() . '/js/photo-gallery.js', true );
+
+    // script will load in footer
+	wp_enqueue_script( 'oceanreef-isotope-js',  get_stylesheet_directory_uri() . '/js/jquery.isotope.min.js', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'oceanreef_scripts' );
@@ -184,3 +197,49 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/* Add CPT for Filterable Gallery */
+
+add_action('init', 'create_filterable_gallery');
+function create_filterable_gallery() 
+{
+  $labels = array(
+    'name' => _x('Photo Gallery', 'photo-gallery'),
+    'singular_name' => _x('Photo', 'photo-gallery'),
+    'add_new' => _x('Add New', 'photo-gallery'),
+    'add_new_item' => __('Add New Photo Gallery Item'),
+    'edit_item' => __('Edit Item'),
+    'new_item' => __('New Item'),
+    'view_item' => __('View Item'),
+    'search_items' => __('Search Items'),
+    'not_found' =>  __('No items found'),
+    'not_found_in_trash' => __('No items found in Trash'), 
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'show_ui' => true, 
+    'query_var' => true,
+    'rewrite' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'menu_position' => 20,
+    'supports' => array('title','editor','thumbnail')
+  ); 
+  register_post_type('photo-gallery',$args);
+}
+
+/* Add catagories for filter */
+
+register_taxonomy( "photo-gallery-categories", 
+	array( 	"photo-gallery" ), 
+	array( 	"hierarchical" => true,
+			"labels" => array('name'=>"Years",'add_new_item'=>"Add New Year"), 
+			"singular_label" => __( "Year" ), 
+			"rewrite" => array( 'slug' => 'years', // This controls the base slug that will display before each term 
+			 'with_front' => false)
+		 ) 
+);
+
