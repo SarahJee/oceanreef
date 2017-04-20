@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */
 
 if ( ! function_exists( 'oceanreef_posted_on' ) ) :
@@ -147,7 +147,7 @@ function oceanreef_post_navigation() {
  * Customize ellipsis at end of excerpts.
  */
 function oceanreef_excerpt_more( $more ) {
-	return "…";
+	return "...";
 }
 add_filter( 'excerpt_more', 'oceanreef_excerpt_more' );
 

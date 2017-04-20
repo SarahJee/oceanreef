@@ -4,7 +4,7 @@
   *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  *
  */
 
@@ -13,61 +13,66 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			
-
-		<ul id="filters">
-		    <?php
-		        $terms = get_terms('photo-gallery-categories');
-		        $count = count($terms);
-		            echo '<li><a href="javascript:void(0)" title="" data-filter=".all" class="active">All</a></li>';
-		        if ( $count > 0 ){
-		 
-		            foreach ( $terms as $term ) {
-		 
-		                $termname = strtolower($term->name);
-		                $termname = str_replace(' ', '-', $termname);
-		                echo '<li><a href="javascript:void(0)" title="" data-filter=".'.$termname.'">'.$term->name.'</a></li>';
-		            }
-		        }
-		    ?>
-		</ul>
 		
-		<div id="gallery">
- 
-		  <?php
-		  /* 
-		  Query the post 
-		  */
-		  $args = array( 'post_type' => 'photo-gallery', 'posts_per_page' => -1 );
-		  $loop = new WP_Query( $args );
-		  while ( $loop->have_posts() ) : $loop->the_post(); 
-		 
-		     /* 
-		     Pull category for each unique post using the ID 
-		     */
-		     $terms = get_the_terms( $post->ID, 'photo-gallery-categories' );	
-		     if ( $terms && ! is_wp_error( $terms ) ) : 
-		 
-		         $links = array();
-		 
-		         foreach ( $terms as $term ) {
-		             $links[] = $term->name;
-		         }
-		 
-		         $tax_links = join( " ", str_replace(' ', '-', $links));          
-		         $tax = strtolower($tax_links);
-		     else :	
-			 $tax = '';					
-		     endif; 
-		 
-		     /* Insert category name into photo-gallery-item class */ 
-		     echo '<div class="all photo-gallery-item '. $tax .'">';;
-		     echo '<div class="thumbnail">'. the_post_thumbnail() .'</div>';
-		     echo '</div>'; 
-		  endwhile; ?>
-		 
-		</div>
+		
+		 <nav>
+            <ul>
+                <li class="filter"><a href="#">Filter Projects</a>
+                    <ul id="project-navbar"></ul>
+                </li>
+            </ul>
+        </nav>	
+        
+        <ul class="projects">
+            
+            <?php
+            
+                // WP_Query arguments
+                $args = array(
+                    'post_type'              => array( 'photo-gallery' ),
+                    'posts_per_page'         => '-1',
+                ); 
 
+                // The Query
+                $query = new WP_Query( $args );
+
+                // The Loop
+                if ( $query->have_posts() ) {
+                    while ( $query->have_posts() ) {
+                        $query->the_post(); 
+                        
+                        $taxonomy = 'photo-gallery-categories';
+                        
+						?>
+
+                        <li class="project" data-tags="<?php
+                                                       $terms = get_the_terms( $post->ID , $taxonomy );
+                                                        foreach ( $terms as $term ) {
+                                                        $termname = $term->name;
+                                                            
+                                                        echo $termname . ',';
+                                                        }
+                                                       ?>">
+                            <a href="<?php the_permalink(); ?>">
+                            
+                            <div class="project-container">
+	                            <?php the_post_thumbnail(); ?>
+                            </div>
+                            </a>
+                        </li>
+
+                    <?php }
+                } else {
+                    // no posts found
+                }
+
+                // Restore original Post Data
+                wp_reset_postdata();
+            ?>
+            
+        </ul><!-- projects -->
+
+	
 
 			<?php
 			while ( have_posts() ) : the_post();

@@ -58,7 +58,7 @@
 					  <span></span>
 					</div><!-- #nav-icon1 -->
 				
-				<span class="menu"><?php esc_html_e( '', 'iqconstruction' ); ?></span></button>
+				<span class="menu"><?php esc_html_e( '', 'oceanreef' ); ?></span></button>
 
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

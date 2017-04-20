@@ -1,10 +1,10 @@
 <?php
 /**
- * Skinny Minnie functions and definitions
+ * Ocean Reef functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */ 
 
 if ( ! function_exists( 'oceanreef_setup' ) ) :
@@ -139,7 +139,7 @@ function oceanreef_scripts() {
 	
 	wp_enqueue_style( 'oceanreef-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'oceanreef-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+	//wp_enqueue_script( 'oceanreef-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 	
 	wp_localize_script( 'oceanreef-navigation', 'oceanreefScreenReaderText', array(
 		'expand' => __( 'Expand child menu', 'oceanreef' ),
@@ -155,20 +155,15 @@ function oceanreef_scripts() {
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-
-    // scrap WP jquery and register from google cdn - load in footer
-    wp_deregister_script('oceanreef-jquery');
-    wp_register_script('oceanreef-jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js", false, null, true );    
-    
+    }
     // load jquery
-    wp_enqueue_script('oceanreef-jquery');
-    
-    // load jquery for photo gallery
-    wp_enqueue_script( 'oceanreef-photogallery-js',  get_stylesheet_directory_uri() . '/js/photo-gallery.js', true );
-
-    // script will load in footer
-	wp_enqueue_script( 'oceanreef-isotope-js',  get_stylesheet_directory_uri() . '/js/jquery.isotope.min.js', true );
-	}
+    wp_enqueue_script('jquery');
+	
+	wp_enqueue_script( 'quicksand',  get_template_directory_uri() . '/js/quicksand.js', array('jquery'), '20161201', true );
+	
+	wp_enqueue_script( 'filter-gallery',  get_template_directory_uri() . '/js/filter-gallery.js', array('jquery'), '20161201', true );
+	 
+	
 }
 add_action( 'wp_enqueue_scripts', 'oceanreef_scripts' );
 
@@ -205,16 +200,16 @@ add_action('init', 'create_filterable_gallery');
 function create_filterable_gallery() 
 {
   $labels = array(
-    'name' => _x('Photo Gallery', 'photo-gallery'),
-    'singular_name' => _x('Photo', 'photo-gallery'),
-    'add_new' => _x('Add New', 'photo-gallery'),
-    'add_new_item' => __('Add New Photo Gallery Item'),
-    'edit_item' => __('Edit Item'),
-    'new_item' => __('New Item'),
-    'view_item' => __('View Item'),
-    'search_items' => __('Search Items'),
-    'not_found' =>  __('No items found'),
-    'not_found_in_trash' => __('No items found in Trash'), 
+    'name' => __('Photo Gallery', 'oceanreef'),
+    'singular_name' => __('Photo', 'oceanreef'),
+    'add_new' => __('Add New', 'oceanreef'),
+    'add_new_item' => __('Add New Photo Gallery Item', 'oceanreef'),
+    'edit_item' => __('Edit Item','oceanreef'),
+    'new_item' => __('New Item','oceanreef'),
+    'view_item' => __('View Item','oceanreef'),
+    'search_items' => __('Search Items','oceanreef'),
+    'not_found' =>  __('No items found','oceanreef'),
+    'not_found_in_trash' => __('No items found in Trash','oceanreef'), 
     'parent_item_colon' => ''
   );
   $args = array(
@@ -229,16 +224,17 @@ function create_filterable_gallery()
     'supports' => array('title','editor','thumbnail')
   ); 
   register_post_type('photo-gallery',$args);
-}
+} 
 
-/* Add catagories for filter */
 
-register_taxonomy( "photo-gallery-categories", 
-	array( 	"photo-gallery" ), 
-	array( 	"hierarchical" => true,
-			"labels" => array('name'=>"Years",'add_new_item'=>"Add New Year"), 
-			"singular_label" => __( "Year" ), 
-			"rewrite" => array( 'slug' => 'years', // This controls the base slug that will display before each term 
+/* Add catagories (taxonomy) for filter */
+
+register_taxonomy( 'photo-gallery-categories', 
+	array( 	'photo-gallery' ), 
+	array( 	'hierarchical' => true,
+			'labels' => array('name'=>'Years','add_new_item'=>"Add New Year"), 
+			'singular_label' => __( 'Year', 'oceanreef' ), 
+			'rewrite' => array( 'slug' => 'years', // This controls the base slug that will display before each term 
 			 'with_front' => false)
 		 ) 
 );

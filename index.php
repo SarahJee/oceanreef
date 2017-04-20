@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */
 
 get_header(); ?>

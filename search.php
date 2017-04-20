@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */
 
 get_header(); ?>

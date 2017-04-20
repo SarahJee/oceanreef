@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */
 
 /**

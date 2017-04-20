@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Default
+ * Template Name: Contact
   *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */
 
 ?>
@@ -56,7 +56,7 @@
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				);
 				?>
-			<a href="<? echo esc_url( get_permalink() ) ?>" rel="bookmark">
+			<a href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark">
 				<?php echo $read_more_link; ?>
 			</a>
 		</div>

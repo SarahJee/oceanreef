@@ -2,7 +2,7 @@
 /**
  * Skinny Minnie Theme Customizer
  *
- * @package Skinny_Minnie
+ * @package oceanreef
  */
 
 /**
