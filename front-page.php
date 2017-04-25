@@ -6,9 +6,20 @@
  *
  * @package oceanreef
  */
- 
 
-get_header(); ?>		
+get_header(); ?>	
+ 
+	<div class="bg std-bg">			
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+		
+		<div class="intro-text">
+			<?php the_field( 'banner_intro' ); ?>
+		</div><!-- .intro-text -->
+	</div><!-- .bg -->
+
+	
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package oceanreef
+ * @package oceanreef 
  */ 
 
 if ( ! function_exists( 'oceanreef_setup' ) ) :
@@ -131,7 +131,7 @@ add_action( 'widgets_init', 'oceanreef_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
- */
+ */  
 function oceanreef_scripts() {
 	
 	//Add Google Fonts
@@ -139,7 +139,7 @@ function oceanreef_scripts() {
 	
 	wp_enqueue_style( 'oceanreef-style', get_stylesheet_uri() );
 
-	//wp_enqueue_script( 'oceanreef-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'oceanreef-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 	
 	wp_localize_script( 'oceanreef-navigation', 'oceanreefScreenReaderText', array(
 		'expand' => __( 'Expand child menu', 'oceanreef' ),
@@ -156,13 +156,21 @@ function oceanreef_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
     }
+    
     // load jquery
     wp_enqueue_script('jquery');
+    
 	
 	wp_enqueue_script( 'quicksand',  get_template_directory_uri() . '/js/quicksand.js', array('jquery'), '20161201', true );
 	
 	wp_enqueue_script( 'filter-gallery',  get_template_directory_uri() . '/js/filter-gallery.js', array('jquery'), '20161201', true );
 	 
+	wp_register_style('accordion ui-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/south-street/jquery-ui.css');
+    wp_enqueue_style('wptuts-jquery-ui-style');
+ 
+    wp_register_script('wptuts-custom-js', get_template_directory_uri() . '/faq/faq.js', 'jquery-ui-accordion', '', true);
+    wp_enqueue_script('wptuts-custom-js');
+	
 	
 }
 add_action( 'wp_enqueue_scripts', 'oceanreef_scripts' );

@@ -15,10 +15,9 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
-
+	padding: 5px;
+	width: 95%;	
+	
 	&:focus {
 		color: $color__text-input-focus;
 	}
@@ -28,6 +27,14 @@ select {
 	border: 1px solid $color__border-input;
 }
 
-textarea {
-	width: 100%;
+.wpcf7-textarea {
+	height: 120px;
 }
+
+.wpcf7 label {
+	margin-bottom: 1em;
+}
+
+
+
+

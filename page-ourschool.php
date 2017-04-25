@@ -9,15 +9,29 @@
  */
 
 get_header(); ?>
+
+	<div class="bg med-bg">	
+		<div class="test">		
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header><!-- .entry-header -->
+			
+			<div class="intro-text ourschool">
+				<?php the_field( 'banner_intro' ); ?>
+			</div><!-- .intro-text -->
+		</div>
+	</div><!-- .bg -->
+	
+		<div class="circular-img">
+			<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/04/ocean-reef-student.png"/>
+		</div>
+
 		
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			
-			<div class="circular-img">
-				<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/04/ocean-reef-student.png"/>
-			</div>
-
+			
 			<?php
 			while ( have_posts() ) : the_post();
 

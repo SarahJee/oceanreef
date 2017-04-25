@@ -66,6 +66,9 @@
 		</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 	
+		
+		<div id="deco-banner"><?php//decorative banner?></div>
+	
 		<figure class="featured-image">
 			<?php // Use featured image for hero banner
 			if ( has_post_thumbnail() ) { ?>
@@ -75,19 +78,6 @@
 			?><?php } ?>
 		</figure><!-- .featured-image .full-bleed -->
 
-		<div id="intro-section">
-
-			<div class="bg">			
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header><!-- .entry-header -->
-			</div><!-- .bg -->
-			
-			<div class="intro-text">
-				<?php the_field( 'banner_intro' ); ?>
-			</div><!-- .intro-text -->
-			
-		</div><!-- .intro-section -->
-	
+</div>	
 	
 	<div id="content" class="site-content">

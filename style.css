@@ -507,15 +507,16 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: transparent;
-	color: #000;
+	border-radius: 2px;
+	border: none;
+	background: #ff6868;
+	color: #fff;
 	font-size: 18px;
 	font-size: 1.125rem;
 	line-height: 1;
-	padding: .5em .4em;
+	padding: .8em .4em;
+	text-transform: uppercase;
+	width: 95%;
 }
 
 button:hover, button:active, button:focus,
@@ -528,7 +529,7 @@ input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	background: #ff3e48;
 }
 
 input[type="text"],
@@ -548,9 +549,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
+	padding: 5px;
+	width: 95%;
 }
 
 input[type="text"]:focus,
@@ -576,8 +576,12 @@ select {
 	border: 1px solid #ccc;
 }
 
-textarea {
-	width: 100%;
+.wpcf7-textarea {
+	height: 120px;
+}
+
+.wpcf7 label {
+	margin-bottom: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -882,23 +886,23 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Global layouts
 --------------------------------------------------------------*/
-.site-content {
-	padding: 1em;
+.content-area {
+	padding: 0 1em;
 }
 
 @media screen and (min-width: 600px) {
-	.site-content {
+	.content-area {
 		padding: 2em 1em;
 	}
 }
 
 @media screen and (min-width: 1080px) {
-	.site-content {
-		padding: 2em 0;
+	.content-area {
+		padding: 0;
 	}
 }
 
-.site-content {
+.content-area {
 	max-width: 1080px;
 	margin: 0 auto;
 }
@@ -1048,6 +1052,15 @@ a:hover, a:active {
 	.site-navigation {
 		width: 85%;
 	}
+}
+
+#deco-banner {
+	background: #002c3d;
+	position: absolute;
+	width: 100%;
+	top: 330px;
+	z-index: -99;
+	height: 170px;
 }
 
 /*
@@ -1201,6 +1214,7 @@ Header Menu
 button.menu-toggle {
 	background: transparent;
 	border: transparent;
+	width: 90px;
 }
 
 /* Hamburger */
@@ -1559,10 +1573,6 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	margin: 1.5em 0;
 }
 
-.site-content {
-	padding-top: 1.5em;
-}
-
 /* Home Page Styles */
 .featured-image {
 	margin: 0 auto;
@@ -1576,23 +1586,65 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 }
 
 .bg {
-	background: url(http://www.oceanreef.dev/wp-content/uploads/2017/04/white-bg.jpg) no-repeat;
-	height: 370px;
 	max-width: 1080px;
 	margin: 0 auto;
+	display: block;
 }
 
-#intro-section {
+.std-bg {
+	background: url("/wp-content/uploads/2017/04/white-bg.jpg") no-repeat;
+	height: 369px;
+}
+
+@media screen and (min-width: 600px) {
+	.std-bg {
+		height: 349px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.std-bg {
+		height: 400px;
+	}
+}
+
+.med-bg {
+	background: url("/wp-content/uploads/2017/04/white-bg-med.jpg") no-repeat;
+	height: 280px;
+}
+
+.skinny-bg {
+	background: url("/wp-content/uploads/2017/04/white-bg-short.jpg") no-repeat;
+	height: 290px;
+}
+
+.large-bg {
+	background: url("/wp-content/uploads/2017/04/bg-large.jpg") no-repeat;
+	height: 750px;
+}
+
+@media screen and (min-width: 600px) {
+	.large-bg {
+		height: 605px;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.large-bg {
+		height: 605px;
+	}
+}
+
+/*#intro-section {
 	position: relative;
-	z-index: -1;
-}
-
+	/*z-index: -1;
+}*/
 .intro-text {
 	position: absolute;
 	height: 300px;
 	background-color: rgba(0, 44, 62, 0.88);
 	width: 100%;
-	bottom: 0;
+	/*bottom: 0;*/
 	left: 0;
 	right: 0;
 }
@@ -1609,29 +1661,66 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	text-align: center;
 	max-width: 1080px;
 	margin: 0 auto;
-	padding: 2em 3em;
+	padding: 1em 3em;
 	line-height: 1.75;
 }
 
 @media screen and (min-width: 600px) {
 	.intro-text p {
-		padding: 2em 7em;
+		padding: 3em 7em;
 		font-size: 1em;
 	}
 }
 
-@media screen and (min-width: 900px) {
-	.intro-text p {
-		padding-top: 4em;
+.intro-text.short-intro {
+	height: 190px;
+}
+
+@media screen and (min-width: 600px) {
+	.intro-text.short-intro p {
+		padding-top: 1em;
 	}
 }
 
+.intro-text.skinny-intro {
+	height: 100px;
+}
+
+.intro-text.ourschool {
+	height: 211px;
+}
+
+@media screen and (min-width: 900px) {
+	.intro-text.ourschool {
+		height: 190px;
+	}
+}
+
+.intro-text.contact-banner {
+	height: 650px;
+}
+
+@media screen and (min-width: 600px) {
+	.intro-text.contact-banner {
+		height: 512px;
+	}
+}
+
+.intro-text.contact-banner h4 {
+	margin-bottom: 16px;
+}
+
+.intro-text.contact-banner p, .intro-text.contact-banner h4 {
+	padding: 0;
+	margin: 1em 0;
+}
+
+/* Home Template Styles */
 #seven-cs-section {
 	background-color: #00a6b8;
 	border-top: solid 1px #fff;
-	margin-left: -2em;
-	margin-right: -2em;
-	margin-top: -2em;
+	margin-left: -1em;
+	margin-right: -1em;
 }
 
 @media screen and (min-width: 600px) {
@@ -1639,11 +1728,17 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 		background-color: transparent;
 		margin-top: 0;
 		height: 50px;
+		margin-top: 3em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	#seven-cs-section {
+		margin-top: -0;
 	}
 }
 
 #seven-cs-title {
-	max-width: 270px;
 	background-color: #00a6b8;
 	height: 60px;
 	position: relative;
@@ -1655,6 +1750,7 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	#seven-cs-title {
 		border-top: none;
 		margin: -50px auto;
+		max-width: 270px;
 	}
 }
 
@@ -1685,9 +1781,12 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	display: -webkit-flex;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	margin: 0em -2em -1em -2em;
+	-webkit-flex-wrap: wrap;
+	margin-left: -1em;
+	margin-right: -1em;
 }
 
 @media screen and (min-width: 600px) {
@@ -1701,8 +1800,10 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 
 @media screen and (min-width: 900px) {
 	#seven-cs-boxes {
+		margin-top: 0;
 		margin-left: 0;
 		margin-right: 0;
+		margin-bottom: 3em;
 	}
 }
 
@@ -1717,7 +1818,6 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	/*width: 14.2857142%;*/
 	position: relative;
 }
 
@@ -1762,8 +1862,9 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	display: block;
 	border-radius: 100%;
 	border: solid 7px rgba(0, 166, 184, 0.9);
-	margin-top: -5em;
+	margin-top: -6em;
 	width: 50%;
+	position: relative;
 }
 
 @media screen and (min-width: 600px) {
@@ -1771,10 +1872,11 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 		border: solid 10px rgba(0, 166, 184, 0.9);
 		max-width: 240px;
 		width: 100%;
+		margin-top: -2em;
 	}
 }
 
-/* Drum-Corp Template Styles */
+/* General Template Styles */
 #image_text_row h4 {
 	text-transform: uppercase;
 	font-weight: 400;
@@ -1791,6 +1893,7 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+		display: -webkit-flex;
 	}
 	#image_text_row .one-third_img {
 		min-width: 340px;
@@ -1802,6 +1905,81 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 		        flex-grow: 2;
 		margin: 0 2em;
 	}
+}
+
+/* Contact Page Template Styles */
+@media screen and (min-width: 600px) {
+	#contact {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	#contact > .contact-info {
+		width: 50%;
+		padding: 2em;
+	}
+	#contact > .contact-info:first-child {
+		margin-right: 20px;
+	}
+	.contact-form {
+		padding-top: 2em;
+	}
+}
+
+.contact-info {
+	margin: 2em 0;
+}
+
+@media screen and (min-width: 900px) {
+	.contact-info {
+		border-right: 2px solid #fff;
+	}
+}
+
+.contact-info h4 {
+	color: #ff6868;
+	font-size: 1em;
+	font-weight: 700;
+}
+
+@media screen and (min-width: 900px) {
+	.contact-info h4, .contact-info p {
+		text-align: right;
+	}
+}
+
+.contact-info span {
+	color: #ff6868;
+}
+
+#googlemap {
+	height: 400px;
+}
+
+/* Masonry Gallery */
+ul.projects {
+	/* Masonry container */
+	-webkit-column-count: 4;
+	   -moz-column-count: 4;
+	        column-count: 4;
+	-webkit-column-gap: .5em;
+	   -moz-column-gap: .5em;
+	        column-gap: .5em;
+	border: solid red 1px;
+	padding-left: 0;
+}
+
+li.project {
+	/* Masonry bricks or child elements */
+	list-style-type: none;
+	display: inline-block;
+	margin: 0 0 .1em;
+	width: 100%;
+}
+
+/* Test gallery plugin */
+.psgal a {
+	border-bottom: none;
 }
 
 /*--------------------------------------------------------------
