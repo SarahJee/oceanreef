@@ -70,12 +70,13 @@
 		<div id="deco-banner"><?php//decorative banner?></div>
 	
 		<figure class="featured-image">
-			<?php // Use featured image for hero banner
-			if ( has_post_thumbnail() ) { ?>
-			
-			<?php //max image size for featured image on posts 1080x376
+			<?php // Use featured image for hero banner - max image size for featured image on posts 1080x376
+			if ( has_post_thumbnail() ) { 
 				the_post_thumbnail( 'oceanreef-hero'); 
-			?><?php } ?>
+				} else {
+			?>
+			<img src="<?php echo get_site_url(); ?>/wp-content/uploads/2017/04/default-hero1.jpg" alt="<?php the_title(); ?>" />
+			<?php } ?>
 		</figure><!-- .featured-image .full-bleed -->
 
 </div>	

@@ -146,7 +146,6 @@ function oceanreef_scripts() {
 		'collapse' => __( 'Collapse child menu', 'oceanreef' ),	
 	)); 
 	
-	wp_enqueue_script( 'oceanreef-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20161201', true );
 		
 	/** Register and load font awesome CSS files using a CDN. */
 	wp_enqueue_style( 'oceanreef-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
@@ -160,20 +159,19 @@ function oceanreef_scripts() {
     // load jquery
     wp_enqueue_script('jquery');
     
+    wp_enqueue_script( 'oceanreef-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20161201', true );   
 	
 	wp_enqueue_script( 'quicksand',  get_template_directory_uri() . '/js/quicksand.js', array('jquery'), '20161201', true );
 	
 	wp_enqueue_script( 'filter-gallery',  get_template_directory_uri() . '/js/filter-gallery.js', array('jquery'), '20161201', true );
-	 
-	wp_register_style('accordion ui-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/south-street/jquery-ui.css');
-    wp_enqueue_style('wptuts-jquery-ui-style');
- 
-    wp_register_script('wptuts-custom-js', get_template_directory_uri() . '/faq/faq.js', 'jquery-ui-accordion', '', true);
-    wp_enqueue_script('wptuts-custom-js');
-	
+		
 	
 }
 add_action( 'wp_enqueue_scripts', 'oceanreef_scripts' );
+
+
+	wp_enqueue_script('jquery-ui-accordion');
+	wp_enqueue_script( 'custom-accordion', get_template_directory_uri() . '/js/accordion.js', array('jquery') );
 
 
 /**
