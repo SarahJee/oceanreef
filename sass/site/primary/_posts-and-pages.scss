@@ -561,8 +561,55 @@ h1.entry-title {
 }
 	
 
-	
+/* Tannoy Newsletter Page Template Styles */
 
+#accordion {
+	max-width: 700px;
+	margin: 2em auto;	
+}
+
+#accordion h3 {
+	color: #fff;
+	background-color: $color__secondary;
+	font-size: .8em;
+	padding: 1em;
+	margin: 0;
+}
+
+#accordion h3:nth-of-type(odd) {
+	background-color: #01909f;
+}
+
+.accord-section {	
+	margin-bottom: 0;
+	width: 100%;
+	@media screen and (min-width: $query__small) { 
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+.accord-section a {
+	text-align: center;
+	text-decoration: none;
+	color: $color__secondary;
+	text-transform: uppercase;
+	font-size: .8em;
+	padding: .5em;
+	display: block;
+	@media screen and (min-width: $query__small) { 
+			justify-content: center;
+		width: 33.33%;
+		}
+}
+
+.accord-section a {
+	background-color: #d9ecf3;
+}
+
+.accord-section a:nth-child(odd) {
+	background-color: #e9f5f9;
+}
 
 /* Masonry Gallery */
 

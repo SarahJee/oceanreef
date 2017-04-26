@@ -1956,6 +1956,66 @@ h1.entry-title a:focus, h1.entry-title a:hover {
 	height: 400px;
 }
 
+/* Tannoy Newsletter Page Template Styles */
+#accordion {
+	max-width: 700px;
+	margin: 2em auto;
+}
+
+#accordion h3 {
+	color: #fff;
+	background-color: #00a6b8;
+	font-size: .8em;
+	padding: 1em;
+	margin: 0;
+}
+
+#accordion h3:nth-of-type(odd) {
+	background-color: #01909f;
+}
+
+.accord-section {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+	.accord-section {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+}
+
+.accord-section a {
+	text-align: center;
+	text-decoration: none;
+	color: #00a6b8;
+	text-transform: uppercase;
+	font-size: .8em;
+	padding: .5em;
+	display: block;
+}
+
+@media screen and (min-width: 600px) {
+	.accord-section a {
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		width: 33.33%;
+	}
+}
+
+.accord-section a {
+	background-color: #d9ecf3;
+}
+
+.accord-section a:nth-child(odd) {
+	background-color: #e9f5f9;
+}
+
 /* Masonry Gallery */
 ul.projects {
 	/* Masonry container */
