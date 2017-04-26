@@ -25,55 +25,147 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		
+	<?php if ( have_rows( 'download_newsletters' ) ): ?>
+	<?php while ( have_rows( 'download_newsletters' ) ) : the_row(); ?>
+		<?php if ( get_row_layout() == 'news2017' ) : ?>
+			
 		<div id="accordion">	
-		 <h3>Section 1</h3>
-		  <div>
-		    <p>
-		    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-		    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-		    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-		    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-		    </p>
-		  </div>
-		  <h3>Section 2</h3>
-		  <div>
-		    <p>
-		    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-		    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-		    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-		    suscipit faucibus urna.
-		    </p>
-		  </div>
-		  <h3>Section 3</h3>
-		  <div>
-		    <p>
-		    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-		    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-		    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-		    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-		    </p>
-		  </div>
-		  <h3>Section 4</h3>
-		  <div>
-		    <p>
-		    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-		    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-		    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-		    mauris vel est.
-		    </p>
-		    <p>
-		    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-		    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-		    inceptos himenaeos.
-		    </p>
-		  </div>
-		</div>
-			
-			
-			
-			
+		 <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> View 2017 Newsletters <i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
+			<div class="accord-section">
+				<?php if ( get_sub_field( 'jan2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'jan2017' ); ?>">January</a>
+				<?php } ?>	
+				  <?php if ( get_sub_field( 'feb2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'feb2017' ); ?>">February</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'mar2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'mar2017' ); ?>">March</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'apr2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'apr2017' ); ?>">April</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'may2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'may2017' ); ?>">May</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'jun2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'jun2017' ); ?>">June</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'jul2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'jul2017' ); ?>">July</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'aug2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'aug2017' ); ?>">August</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'sep2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'sep2017' ); ?>">September</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'oct2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'oct2017' ); ?>">October</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'nov2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'nov2017' ); ?>">November</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'dec2017' ) ) { ?>
+					<a href="<?php the_sub_field( 'dec2017' ); ?>">December</a>
+				<?php } ?>		   
+			</div>
+		   
 
-			<?php
+		<?php elseif ( get_row_layout() == 'news2016' ) : ?>
+		   
+		   	<h3><i class="fa fa-file-text-o" aria-hidden="true"></i> View 2016 Newsletters <i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
+		   	
+			<div class="accord-section">	 
+		   		 <?php if ( get_sub_field( 'jan2016' ) ) { ?>
+				<a href="<?php the_sub_field( 'jan2016' ); ?>">January</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'feb2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'feb2016' ); ?>">February</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'mar2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'mar2016' ); ?>">March</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'apr2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'apr2016' ); ?>">April</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'may2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'may2016' ); ?>">May</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'jun2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'jun2016' ); ?>">June</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'jul2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'jul2016' ); ?>">July</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'aug2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'aug2016' ); ?>">August</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'sep2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'sep2016' ); ?>">September</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'oct2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'oct2016' ); ?>">October</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'nov2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'nov2016' ); ?>">November</a>
+				<?php } ?>
+				<?php if ( get_sub_field( 'dec2016' ) ) { ?>
+					<a href="<?php the_sub_field( 'dec2016' ); ?>">December</a>
+				<?php } ?>			
+		</div>
+		
+		<?php elseif ( get_row_layout() == 'news2015' ) : ?>
+		   
+		    <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> View 2015 Newsletters <i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
+		    
+		<div class="accord-section">
+		    <?php if ( get_sub_field( 'jan2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'jan2015' ); ?>">January</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'feb2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'feb2015' ); ?>">February</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'mar2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'mar2015' ); ?>">March</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'apr2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'apr2015' ); ?>">April</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'may2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'may2015' ); ?>">May</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'jun2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'jun2015' ); ?>">June</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'jul2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'jul2015' ); ?>">July</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'aug2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'aug2015' ); ?>">August</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'sep2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'sep2015' ); ?>">September</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'oct2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'oct2015' ); ?>">October</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'nov2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'nov2015' ); ?>">November</a>
+			<?php } ?>
+			<?php if ( get_sub_field( 'dec2015' ) ) { ?>
+				<a href="<?php the_sub_field( 'dec2015' ); ?>">December</a>
+			<?php } ?>
+		</div>
+		
+		
+		    <?php endif; ?>
+	<?php endwhile; ?>
+<?php else: ?>
+	<?php // no layouts found ?>
+<?php endif; ?> 
+		    
+		    
+		  <?php
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'page' );
