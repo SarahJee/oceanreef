@@ -6,6 +6,7 @@
  */
 ( function( $ ) {
 	var container, button, menu, links, subMenus;
+	var screenReaderText = $(".screen-reader-text");
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {

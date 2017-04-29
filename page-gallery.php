@@ -9,22 +9,56 @@
  */
 
 get_header(); ?>
+
+	<div class="bg skinny-bg" style="height: 128px; margin-bottom: 10px;">			
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+		
+		<div class="intro-text gallery-banner" style="height: auto; padding-top: 0px;">
+            <div class="photo-gallery-filter-wrap">
+              
+              <nav id="filters" style="margin-bottom: 0px; background: none;">
+
+                    <?php
+
+                    $terms = get_terms( array(
+                        'taxonomy' => 'photo-gallery-categories',
+                        'hide_empty' => false,
+                    ) );
+
+                   //echo '<pre>'.print_r($terms, true).'</pre>';
+
+                    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+
+                        echo '<span>filter by </span>';
+
+                        echo '<select>';
+
+                        echo '<option value="*">Year</option>';
+
+                        foreach ( $terms as $term ) {
+                            echo '<option value=".'.$term->name.'">' . $term->name . '</option>';
+                        }
+
+                        echo '</select>';
+                    }
+
+                    ?>     
+                  
+                </nav>
+
+            </div>  
+			<?php // the_field( 'banner_intro' ); ?>
+		</div><!-- .intro-text -->
+	</div><!-- .bg -->	
 		
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		
-		
-		 <nav>
-            <ul>
-                <li class="filter"><a href="#">Filter Projects</a>
-                    <ul id="project-navbar"></ul>
-                </li>
-            </ul>
-        </nav>	
         
-        <ul class="projects">
-            
+        <div class="projects">
+
             <?php
             
                 // WP_Query arguments
@@ -42,24 +76,26 @@ get_header(); ?>
                         $query->the_post(); 
                         
                         $taxonomy = 'photo-gallery-categories';
-                        
-						?>
 
-                        <li class="project" data-tags="<?php
+                        $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
+                        
+                        ?>
+
+                        <div class="project <?php
                                                        $terms = get_the_terms( $post->ID , $taxonomy );
                                                         foreach ( $terms as $term ) {
                                                         $termname = $term->name;
                                                             
-                                                        echo $termname . ',';
+                                                        echo $termname . ' ';
                                                         }
                                                        ?>">
-                            <a href="<?php the_permalink(); ?>">
+                           <a data-fancybox="gallery" href="<?php echo $feat_image_url; ?>"> 
                             
-                            <div class="project-container">
-	                            <?php the_post_thumbnail(); ?>
-                            </div>
-                            </a>
-                        </li>
+                            <!-- <div class="project-container"> -->
+                                <?php the_post_thumbnail(); ?>
+                           <!--  </div> -->
+                           </a>
+                        </div>
 
                     <?php }
                 } else {
@@ -70,7 +106,8 @@ get_header(); ?>
                 wp_reset_postdata();
             ?>
             
-        </ul><!-- projects -->
+            
+        </div><!-- projects -->
 
 	
 

@@ -1190,6 +1190,10 @@ Header Menu
 	padding-right: 2em;
 }
 
+#main-navigation .dashicons-admin-appearance:before {
+	content: none;
+}
+
 /* Mobile Menu */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1369,6 +1373,46 @@ button.menu-toggle {
 	}
 	.main-navigation ul li a {
 		padding: .4em 1em;
+	}
+	/* Menu icons */
+	#main-navigation .home-icon .dashicons-admin-appearance:before {
+		content: "";
+		background: url('images/home.png') no-repeat scroll 0  0 transparent;
+		display: block;
+		width: 55px;
+		height: 35px;
+	}
+
+	#main-navigation .school-icon .dashicons-admin-appearance:before {
+		content: "";
+		background: url('images/our-school.png') no-repeat scroll 0  0 transparent;
+		display: block;
+		width: 55px;
+		height: 35px;
+	}
+
+	#main-navigation .learning-icon .dashicons-admin-appearance:before {
+		content: "";
+		background: url('images/learning-zone.png') no-repeat scroll 0  0 transparent;
+		display: block;
+		width: 55px;
+		height: 35px;
+	}
+
+	#main-navigation .pc-icon .dashicons-admin-appearance:before {
+		content: "";
+		background: url('images/parents-and-community.png') no-repeat scroll 0  0 transparent;
+		display: block;
+		width: 55px;
+		height: 35px;
+	}
+
+	#main-navigation .photos-icon .dashicons-admin-appearance:before {
+		content: "";
+		background: url('images/photos.png') no-repeat scroll 0  0 transparent;
+		display: block;
+		width: 55px;
+		height: 35px;
 	}
 }
 
@@ -2583,6 +2627,99 @@ object {
 /*--------------------------------------------------------------
 ## Filter Galery
 --------------------------------------------------------------*/
+
+
+.projects {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* clear fix */
+.projects:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.projects .project {
+  width: 265px;
+  margin-bottom: 5px;
+}
+
+.projects .project img:hover {
+	opacity: 0.7;
+}
+
+#filters {
+	 text-align: center;
+	 background: rgba(0,44,61, 0.8);
+	 padding: 10px 0;
+	 margin-bottom: 44px;
+}
+
+.photo-gallery-filter-wrap {
+	position: relative;
+	display: block;
+}
+
+.photo-gallery-filter-wrap::after {
+	  content: "";
+  background: url('https://oceanstaging.gwtb.com.au/wp-content/uploads/2017/04/default-hero1.jpg');
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+.photo-gallery-filter-wrap h3 {
+	  padding: 15px 0;
+	  margin: 0;
+	  color: #002c3d;
+}
+
+
+#filters select {
+	font-weight: bold;
+    border: none;
+    border-radius: 22px;
+    padding-left: 6px;
+}
+
+#filters h3 {
+	text-align: center;
+	color: #002c3d;
+	margin: 0;
+}
+
+  
+
+#filters span {
+	font-size: 16px;
+    color: #fff;
+    margin-right: 5px;
+	text-transform: lowercase;
+		font-weight: bold;
+}
+
+body .main-navigation ul {
+	    padding-top: 20px;
+}
+
+#main-navigation .home-icon .dashicons-admin-appearance,
+#main-navigation .school-icon .dashicons-admin-appearance,
+#main-navigation .learning-icon .dashicons-admin-appearance,
+#main-navigation .pc-icon .dashicons-admin-appearance,
+#main-navigation .photos-icon .dashicons-admin-appearance {
+    position: absolute;
+    top: -29px;
+    left: 50%;
+    margin-left: -26px;
+    font-size: 25px;
+}
+
 /**** Isotope Filtering ****/
 .isotope-item {
 	z-index: 2;
@@ -2622,3 +2759,10 @@ object {
 }
 
 /*# sourceMappingURL=sass/maps/style.css.map */
+
+@media only screen and (max-width: 500px) {
+	.page-template-page-gallery-php .site-content {
+		background: #fff;
+		z-index: 1;
+	}
+}
