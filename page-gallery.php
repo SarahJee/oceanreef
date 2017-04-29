@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="intro-text gallery-banner" style="height: auto; padding-top: 0px;">
             <div class="photo-gallery-filter-wrap">
               
-              <nav id="filters">
+              <nav id="filters" style="margin-bottom: 0px; background: none;">
 
                     <?php
 
