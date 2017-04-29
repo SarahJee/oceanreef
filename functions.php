@@ -140,6 +140,10 @@ function oceanreef_scripts() {
 	wp_enqueue_style( 'oceanreef-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'oceanreef-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+
+	// Lightbox
+    wp_enqueue_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js', array( 'jquery' ), false, true );
+    wp_enqueue_style( 'lightbox-style', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css' );
 	
 	wp_localize_script( 'oceanreef-navigation', 'oceanreefScreenReaderText', array(
 		'expand' => __( 'Expand child menu', 'oceanreef' ),
@@ -161,10 +165,14 @@ function oceanreef_scripts() {
     
     wp_enqueue_script( 'oceanreef-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20161201', true );   
 	
-	wp_enqueue_script( 'quicksand',  get_template_directory_uri() . '/js/quicksand.js', array('jquery'), '20161201', true );
+	//wp_enqueue_script( 'quicksand',  get_template_directory_uri() . '/js/quicksand.js', array('jquery'), '20161201', true );
 	
-	wp_enqueue_script( 'filter-gallery',  get_template_directory_uri() . '/js/filter-gallery.js', array('jquery'), '20161201', true );
-		
+	//wp_enqueue_script( 'filter-gallery',  get_template_directory_uri() . '/js/filter-gallery.js', array('jquery'), '20161201', true );
+	
+
+	wp_enqueue_script( 'isotope', '//npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js', array( 'jquery' ), '20171', true );
+
+	wp_enqueue_script( 'images_loaded', 'https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.js', array( 'isotope' ), '20171', true );
 	
 }
 add_action( 'wp_enqueue_scripts', 'oceanreef_scripts' );
